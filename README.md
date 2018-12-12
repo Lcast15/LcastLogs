@@ -16,7 +16,7 @@ It's a pretty simple concept.
 That's about it really. Pretty simple.
 
 ## Show us
-Fine.
+
 ![some of the cool ass log stuff](https://images.lcast15.com/LcastLogs1.PNG)
 ![just like real life](https://images.lcast15.com/LcastLogs2.PNG)
 ![darkrp stuff](https://images.lcast15.com/LcastLogs3.PNG)
