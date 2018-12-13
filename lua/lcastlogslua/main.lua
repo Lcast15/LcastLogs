@@ -21,10 +21,12 @@ if SERVER then
 								local Data = util.JSONToTable(Body)
 								local Ply = player.GetBySteamID64(Data['response']['players'][1]['steamid'])
 								Ply.Avatar = Data['response']['players'][1]['avatar']
-								local Description = Ply:Name() .. ' spawned.'
-								local Footer = Ply:Name() .. ' | ' .. Ply:SteamID() .. ' | ' .. Ply:SteamID64() .. ' | ' .. Ply:GetUserGroup()
-								local Image = Ply.Avatar
-								LcastLogsAddLog(Command, Description, Footer, Image)
+								if LcastLogsCommands[Command]['Enabled'] then --this is because this hook will always run regardless if its enabled or disabled. disabling only stops it from logging the event.
+									local Description = Ply:Name() .. ' spawned.'
+									local Footer = Ply:Name() .. ' | ' .. Ply:SteamID() .. ' | ' .. Ply:SteamID64() .. ' | ' .. Ply:GetUserGroup()
+									local Image = Ply.Avatar
+									LcastLogsAddLog(Command, Description, Footer, Image)
+								end
 							end )
 						end
 		, SpeakGlobal = function (Ply, String, Team)

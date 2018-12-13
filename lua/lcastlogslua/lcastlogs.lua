@@ -225,7 +225,7 @@ if SERVER then
 		for k,v in pairs(Commands) do
 			if k ~= 'MetaData' then
 				LcastLogsCommands[k] = v
-				if v['Enabled'] then
+				if v['Enabled'] or k == 'PlayerSpawn' then --playerspawn must always be run as it sets the users avatar parameter which is used alot. if it is configured as disbaled the script just wont log the event but will still run it.
 					hook.Add(v['Hook'], v['Hookname'], LcastLogsFunctions[Commands['MetaData']][k])
 					if v['OnRegFunc'] then
 						v.OnRegFunc()
